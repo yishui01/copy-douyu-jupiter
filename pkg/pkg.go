@@ -2,9 +2,9 @@ package pkg
 
 import (
 	"copy/constant"
+	"copy/pkg/util/xcolor"
 	"copy/pkg/util/xtime"
 	"fmt"
-	"github.com/douyu/jupiter/pkg/util/xcolor"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -49,13 +49,19 @@ func init() {
 	InitEnv()
 }
 
+// Name gets application name.
 func Name() string {
 	return appName
 }
 
+//SetName set app anme
 func SetName(s string) {
 	appName = s
+}
 
+//AppID get appID
+func AppID() string {
+	return appID
 }
 
 //SetAppID set appID
@@ -67,12 +73,28 @@ func SetAppID(s string) {
 func AppVersion() string {
 	return buildAppVersion
 }
+
+//appVersion not defined
+// func SetAppVersion(s string) {
+// 	appVersion = s
+// }
+
+//JupiterVersion get jupiterVersion
 func JupiterVersion() string {
 	return jupiterVersion
 }
+
+// todo: jupiterVersion is const not be set
+// func SetJupiterVersion(s string) {
+// 	jupiterVersion = s
+// }
+
+//BuildTime get buildTime
 func BuildTime() string {
 	return buildTime
 }
+
+//BuildUser get buildUser
 func BuildUser() string {
 	return buildUser
 }
@@ -80,7 +102,9 @@ func BuildUser() string {
 //BuildHost get buildHost
 func BuildHost() string {
 	return buildHost
-} //SetBuildTime set buildTime
+}
+
+//SetBuildTime set buildTime
 func SetBuildTime(param string) {
 	buildTime = strings.Replace(param, "--", " ", 1)
 }
