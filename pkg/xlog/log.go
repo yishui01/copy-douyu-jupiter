@@ -103,7 +103,7 @@ func newLogger(config *Config) *Logger {
 
 	zapLogger := zap.New(
 		core,
-		zapOptions, ...
+		zapOptions...
 	)
 	return &Logger{
 		desugar: zapLogger,
